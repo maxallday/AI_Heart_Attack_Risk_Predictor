@@ -14,7 +14,6 @@ df = pd.read_csv('heart-disease.csv')
 # Display the first few rows of the dataset
 print(df.head())
 
-
 # Step 2: Prepare Data (Select relevant features)yy
 X = df.drop(columns=["target"])  # Features for AI training
 y = df["target"]  # Labels (1 = high risk, 0 = low risk)

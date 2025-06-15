@@ -14,9 +14,6 @@ scaler = joblib.load("model/scaler.pkl")
 st.title("🚑 AI Heart Attack Risk Predictor")
 st.write("Enter your health details or connect wearable devices for real-time tracking.")
 
-
-
-# 🎥 Add Animated Heartbeat Lottie Player
 #optionally, you can use a Lottie animation for a heartbeat effect
 import streamlit.components.v1 as components
 # ✅ Use a Lottie player component for the heartbeat animation
@@ -26,9 +23,8 @@ st.components.v1.html("""
 """, height=100)  # ✅ Adjust height for proper display
 
 
-
-# 🩺 **User Health Inputs Section**
-# ✅ **Manual Health Inputs (for users without wearables)**
+# 🩺 User Health Inputs Section
+# ✅ Manual Health Inputs (for users without wearables)
 age = st.slider("Age", 20, 80)
 sex = st.selectbox("Sex", ["Male", "Female"])  # 🟢 Fixed syntax
 sex = 1 if sex == "Male" else 0  # ✅ Convert to numeric
@@ -49,7 +45,8 @@ oldpeak = st.slider("ST Depression (Induced by Exercise)", 0.0, 6.0, step=0.1)
 smoking = st.selectbox("Do you smoke?", ["Yes", "No"])
 smoking = 1 if smoking == "Yes" else 0  # ✅ Convert to numeric
 
-# 📡 **Real-Time Data Integration (Smartwatch / Medical Devices)**
+# 📡 Real-Time Data Integration (Smartwatch / Medical Devices)
+# add a legit api for health wearable
 try:
     response = requests.get("https://api.mockhealthdata.com/heart")  # Example API
     if response.status_code == 200:
@@ -66,13 +63,13 @@ except:
     stress_level = st.slider("Stress Level", 1, 10)
     oxygen_level = st.slider("Oxygen Saturation (%)", 80, 100)
 
-# 🏥 **Prepare Input Data (All 13 Features)**
+# 🏥 Prepare Input Data (All 13 Features)**
 user_data = np.array([[age, sex, cp, cholesterol, fbs, restecg, blood_pressure, heart_rate, exang, oldpeak, stress_level, oxygen_level, smoking]])
 
-# ✅ **Transform user data using the loaded scaler**
+# ✅ Transform user data using the loaded scaler**
 user_data_scaled = scaler.transform(user_data)
 
-# 🚨 **Predict and Analyze Risk**
+# 🚨 Predict and Analyze Risk**
 if st.button("Predict Risk"):
     risk_score = model.predict(user_data_scaled)
 
@@ -86,20 +83,20 @@ if st.button("Predict Risk"):
         st.success("✅ Low Risk! Keep up a healthy routine.")
 
 
-# 🏃‍♂️ **Heart Health Tips Section**
+# 🏃‍♂️Heart Health Tips Section**
 st.header("💖 How to Keep a Healthy Heart")
 st.write("""
 A healthy heart leads to a longer, better life! Here are expert-backed tips to reduce heart disease risks:
-🥦 **Eat a balanced diet**: Focus on fruits, veggies, lean proteins, and whole grains. Avoid excessive sugar and processed foods.  
-🏃 **Stay active**: Aim for at least **30 minutes of exercise per day** (walking, jogging, swimming, or cycling).  
-🧘 **Manage stress**: Practice relaxation techniques like meditation or deep breathing.  
-🚭 **Quit smoking**: Smoking damages blood vessels and significantly raises heart attack risk.  
-🍷 **Limit alcohol intake**: Excessive drinking can lead to high blood pressure and heart issues.  
-📈 **Monitor blood pressure & cholesterol**: Keep these levels in check through regular screenings.  
-😴 **Get enough sleep**: Poor sleep increases the risk of heart disease.  
-💧 **Stay hydrated**: Drink plenty of water to maintain good circulation.  
-⚖️ **Maintain a healthy weight**: Obesity is a major risk factor for heart disease.  
-🩺 **Consult a doctor regularly**: Early detection is key for heart health.
+🥦 <strong>Eat a balanced diet</strong>: Focus on fruits, veggies, lean proteins, and whole grains. Avoid excessive sugar and processed foods.  
+🏃 <strong>Stay active</strong>: Aim for at least **30 minutes of exercise per day** (walking, jogging, swimming, or cycling).  
+🧘 <strong>Manage stress</strong>: Practice relaxation techniques like meditation or deep breathing.  
+🚭 <strong>Quit smoking</strong>: Smoking damages blood vessels and significantly raises heart attack risk.  
+🍷 <strong>Limit alcohol intake</strong>: Excessive drinking can lead to high blood pressure and heart issues.  
+📈 <strong>Monitor blood pressure & cholesterol</strong>: Keep these levels in check through regular screenings.  
+😴 <strong>Get enough sleep</strong>: Poor sleep increases the risk of heart disease.  
+💧 <strong>Stay hydrated</strong>: Drink plenty of water to maintain good circulation.  
+⚖️ <strong>Maintain a healthy weight</strong>: Obesity is a major risk factor for heart disease.  
+🩺 <strong>Consult a doctor regularly</strong>: Early detection is key for heart health.
 
 💡 _A small lifestyle change today can lead to a healthier, stronger heart tomorrow!_
 """)
