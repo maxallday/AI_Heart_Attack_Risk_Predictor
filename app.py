@@ -87,16 +87,16 @@ if st.button("Predict Risk"):
 st.header("💖 How to Keep a Healthy Heart")
 st.write("""
 A healthy heart leads to a longer, better life! Here are expert-backed tips to reduce heart disease risks:
-🥦 <strong>Eat a balanced diet</strong>: Focus on fruits, veggies, lean proteins, and whole grains. Avoid excessive sugar and processed foods.  
-🏃 <strong>Stay active</strong>: Aim for at least **30 minutes of exercise per day** (walking, jogging, swimming, or cycling).  
-🧘 <strong>Manage stress</strong>: Practice relaxation techniques like meditation or deep breathing.  
-🚭 <strong>Quit smoking</strong>: Smoking damages blood vessels and significantly raises heart attack risk.  
-🍷 <strong>Limit alcohol intake</strong>: Excessive drinking can lead to high blood pressure and heart issues.  
-📈 <strong>Monitor blood pressure & cholesterol</strong>: Keep these levels in check through regular screenings.  
-😴 <strong>Get enough sleep</strong>: Poor sleep increases the risk of heart disease.  
-💧 <strong>Stay hydrated</strong>: Drink plenty of water to maintain good circulation.  
-⚖️ <strong>Maintain a healthy weight</strong>: Obesity is a major risk factor for heart disease.  
-🩺 <strong>Consult a doctor regularly</strong>: Early detection is key for heart health.
+🥦 Eat a balanced diet: Focus on fruits, veggies, lean proteins, and whole grains. Avoid excessive sugar and processed foods.  
+🏃 Stay active: Aim for at least **30 minutes of exercise per day** (walking, jogging, swimming, or cycling).  
+🧘 Manage stress: Practice relaxation techniques like meditation or deep breathing.  
+🚭 Quit smoking: Smoking damages blood vessels and significantly raises heart attack risk.  
+🍷 Limit alcohol intake: Excessive drinking can lead to high blood pressure and heart issues.  
+📈 Monitor blood pressure & cholesterol: Keep these levels in check through regular screenings.  
+😴 Get enough sleep: Poor sleep increases the risk of heart disease.  
+💧 Stay hydrated: Drink plenty of water to maintain good circulation.  
+⚖️ Maintain a healthy weight: Obesity is a major risk factor for heart disease.  
+🩺 Consult a doctor regularly: Early detection is key for heart health.
 
 💡 _A small lifestyle change today can lead to a healthier, stronger heart tomorrow!_
 """)
